@@ -27,6 +27,7 @@ class FlightSearcher:
             except ResponseError as error:
                 print(error)
 
+            # TODO: stretch - handle cities "missing" from Amadeus test data
             if response.data:
                 for response_datum in response.data:
                     # Exclude potential false positives (e.g. "San Sebastian Gomera" being returned on search for "San Sebastian")

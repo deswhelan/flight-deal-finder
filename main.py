@@ -26,6 +26,6 @@ test_cheap_flights = [
 ]
 
 iata_codes = flight_searcher.get_iata_codes(sheet_manager.city_names)
-print(iata_codes)
+sheet_manager.save_iata_codes(iata_codes)
 # flight_searcher.find_cheap_flights()
 # notification_manager.send_notification(test_cheap_flights)
