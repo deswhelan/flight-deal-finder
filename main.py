@@ -1,3 +1,5 @@
+from sheet_manager import SheetManager
+from flight_searcher import FlightSearcher
 from notification_manager import NotificationManager
 
 #This file will need to use the DataManager,FlightSearch, FlightData, NotificationManager classes to achieve the program requirements.
@@ -9,6 +11,8 @@ import flight_searcher
 
     # TODO: If the price is lower than the lowest price listed in the Google Sheet then send an SMS (or WhatsApp Message) to your own number using the Twilio API.
 
+sheet_manager = SheetManager()
+flight_searcher = FlightSearcher()
 notification_manager = NotificationManager()
 
 test_cheap_flights = [
@@ -21,4 +25,5 @@ test_cheap_flights = [
     }
 ]
 
+flight_searcher.find_cheap_flights()
 notification_manager.send_notification(test_cheap_flights)

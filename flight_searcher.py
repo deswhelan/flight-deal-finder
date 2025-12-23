@@ -1,5 +1,5 @@
 import config
-import requests
+from amadeus import Client, Location, ResponseError
 
 # TODO: Use the Flight Search API to check for the cheapest flights from tomorrow to 6 months later for all the cities in the Google Sheet.
 
@@ -10,13 +10,22 @@ class FlightSearcher:
         self.api_secret = config.AMADEUS["api_secret"]
 
     def find_cheap_flights(self):
-        url = ""
+        # TODO: Get city names from Sheets
+        # TODO: Get IATA code for each city
+        # TODO: Populate google Sheets with IATA code(s)
 
-        body = {
+        amadeus = Client(
+            client_id= self.api_key,
+            client_secret= self.api_secret
+        )
 
-        }
-
-        headers = {
-
-        }
+        try:
+            response = amadeus.reference_data.locations.get(
+                keyword='Dublin',
+                subType=Location.AIRPORT
+            )
+            # print(response.data)
+            print(response.result)
+        except ResponseError as error:
+            print(error)
 

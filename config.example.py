@@ -4,6 +4,12 @@ AMADEUS = {
     "api_secret": "ABC123"
 }
 
+# https://dashboard.sheety.co/
+SHEETY = {
+    "endpoint": "https://api.sheety.co/ABC123",
+    "bearer_token": "ABC123"
+}
+
 # https://www.twilio.com
 TWILIO = {
     "account_sid": "ABC123",
